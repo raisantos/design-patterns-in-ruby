@@ -8,4 +8,8 @@ class StereoOnWithCDCommand
     @stereo.set_cd('IRE')
     @stereo.set_volume(75)
   end
+
+  def undo
+    @stereo.off
+  end
 end

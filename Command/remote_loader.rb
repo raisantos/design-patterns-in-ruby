@@ -30,9 +30,9 @@ class RemoteLoader
 
   puts "\nKitchen:"
   remote_control.on_button_was_pushed(1)
-  remote_control.off_button_was_pushed(1)
+  remote_control.undo_button_was_pushed
 
   puts "\nStereo:"
   remote_control.on_button_was_pushed(2)
-  remote_control.off_button_was_pushed(2)
+  remote_control.undo_button_was_pushed
 end
