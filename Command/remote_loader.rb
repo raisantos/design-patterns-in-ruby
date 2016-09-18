@@ -45,5 +45,5 @@ class RemoteLoader
 
   puts "\nMacro:"
   remote_control.on_button_was_pushed(3)
-  remote_control.off_button_was_pushed(3)
+  remote_control.undo_button_was_pushed
 end
