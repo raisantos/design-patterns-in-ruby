@@ -27,7 +27,7 @@ class RemoteControl
     puts 'Remote Control Slots:'
     for i in (0..@on_commands.size-1)
       puts "[slot #{i}] #{@on_commands[i].class} ------ #{@off_commands[i].class}"
-      puts "[undo] #{@undo_command.class}"
     end
+    puts "[undo] #{@undo_command.class}"
   end
 end

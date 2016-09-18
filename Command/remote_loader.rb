@@ -1,6 +1,7 @@
 require_relative 'remote_control'
 require_relative 'light'
 require_relative 'stereo'
+require_relative 'macro_command'
 
 class RemoteLoader
   remote_control = RemoteControl.new
@@ -21,6 +22,12 @@ class RemoteLoader
   remote_control.set_command(1, kitchen_light_on, kitchen_light_off)
   remote_control.set_command(2, philips_stereo_on, philips_stereo_off)
 
+  party_on = [living_room_light_on, kitchen_light_on, philips_stereo_on]
+  party_off = [living_room_light_off, kitchen_light_off, philips_stereo_off]
+  party_on_macro = MacroCommand.new(party_on)
+  party_off_macro = MacroCommand.new(party_off)
+  remote_control.set_command(3, party_on_macro, party_off_macro)
+
   remote_control.to_string
   print "\n"
 
@@ -35,4 +42,8 @@ class RemoteLoader
   puts "\nStereo:"
   remote_control.on_button_was_pushed(2)
   remote_control.undo_button_was_pushed
+
+  puts "\nMacro:"
+  remote_control.on_button_was_pushed(3)
+  remote_control.off_button_was_pushed(3)
 end
